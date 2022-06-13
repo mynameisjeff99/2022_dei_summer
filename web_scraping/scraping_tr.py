@@ -16,7 +16,7 @@ class ScrapingTr:
 
     def get_department_info_tr(self, soups):
         profs = self.find_profs_tr(soups)
-        _, using_background = self.helper.select_headshots(soups)
+        _, using_background, _ = self.helper.select_tmp_tags(soups)
 
         tags = [profs[len(profs) // 5 * i] for i in range(1, 6)]
 

@@ -18,13 +18,13 @@ class ScrapingBf:
 
 
     def get_department_info_bf(self, soups):
-        headshots, using_background = self.helper.select_headshots(soups)
+        tmp_tags, using_background, using_headshots = self.helper.select_tmp_tags(soups)
 
         counts = []
         tags = []
-        for headshot in headshots:
+        for tmp_tag in tmp_tags:
             try:
-                tag, count = self.find_profile_bf(headshot, 0)
+                tag, count = self.find_profile_bf(tmp_tag, 0)
                 counts.append(count)
                 tags.append(tag)
             except:
@@ -40,15 +40,18 @@ class ScrapingBf:
         tags = [t for (t, c) in zip(tags, counts) if c == count]
         name_pos, title_pos = self.helper.find_pos(tags)
 
-        all_headshots =[]
-        for soup in soups:
-            if using_background:
-                all_headshots.extend(self.helper.select_headshots_background_image(soup))
-            else:
-                all_headshots.extend(soup.find_all('img'))
-
+        all_tags =[]
+        if using_headshots:
+            for soup in soups:
+                if using_background:
+                    all_tags.extend(self.helper.select_headshots_background_image(soup))
+                else:
+                    all_tags.extend(soup.find_all('img'))
+        else:
+            for i in range(len(soups)):
+                all_tags.extend(self.helper.find_name_tags(soups[i:]))
         profs = []
-        for t in all_headshots:
+        for t in all_tags:
             for i in range(count):
                 t = t.parent
             profs.append(t)
@@ -59,7 +62,8 @@ class ScrapingBf:
 if __name__ == "__main__":
     s = ScrapingBf()
     url = input("Website page: ")
-    soups = s.helper.get_soups(url)
+    soups = s.helper.get_soups(url, s.helper.get_driver())
+    print(len(soups))
     res = s.get_department_info_bf(soups)
     print(f"length = {len(res)}")
     print(res[0])

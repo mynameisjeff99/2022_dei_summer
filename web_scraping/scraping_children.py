@@ -33,23 +33,24 @@ class ScrapingChildren:
 
     def get_department_info_children(self, soups):
         profs = []
-        all_headshots = []
+        all_tmp_tags = []
+        using_background = False
         for i in range(len(soups)):
             try:
-                headshots, using_background = self.helper.select_headshots(soups[i:])
-                all_headshots.extend(headshots)
-                profs.extend(self.find_profile_children(headshots))
+                tmp_tags, using_background, _ = self.helper.select_tmp_tags(soups[i:])
+                all_tmp_tags.extend(tmp_tags)
+                profs.extend(self.find_profile_children(tmp_tags))
             except:
                 pass
 
         tags = []
-        for h in all_headshots:
+        for h in all_tmp_tags:
             for p in profs:
                 if str(h) in str(p):
                     tags.append(p)
                     break
         tags = list(set(tags))
-        if len(tags) / len(all_headshots) < 2 / 3:
+        if len(tags) / len(all_tmp_tags) < 2 / 3:
             raise Exception("children failed")
 
         name_pos, title_pos = self.helper.find_pos(tags)

@@ -25,13 +25,13 @@ class ScrapingClass:
 
 
     def get_department_info_class(self, soups):
-        headshots, using_background = self.helper.select_headshots(soups)
+        tmp_tags, using_background, _ = self.helper.select_tmp_tags(soups)
 
         profile_classes = []
         tags = []
-        for headshot in headshots:
+        for tmp_tag in tmp_tags:
             try:
-                tag, profile_c = self.find_profile_class(headshot, 2)
+                tag, profile_c = self.find_profile_class(tmp_tag, 2)
                 profile_classes.append(profile_c)
                 tags.append(tag)
             except:

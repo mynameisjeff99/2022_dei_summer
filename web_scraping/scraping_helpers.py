@@ -9,8 +9,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+import spacy
 
 class ScrapingHelpers:
+    def __init__(self):
+        self.nlp = spacy.load("en_core_web_sm")
 
     def get_driver(self):
         #https://stackoverflow.com/questions/47508518/google-chrome-closes-immediately-after-being-launched-with-selenium
@@ -59,24 +62,40 @@ class ScrapingHelpers:
                     break
         return soups
 
-    def select_headshots(self, soups):
+    def find_name_tags(self, soups):
+        elements = soups[0].find_all('a')
+        items = []
+        for e in elements:
+            strings = list(e.stripped_strings)
+            for s in strings:
+                if self.is_name(s, True):
+                    items.append(e)
+        return items
+
+    def select_tmp_tags(self, soups):
         soup = soups[0]
-        headshots = soup.find_all('img')
+        tags = soup.find_all('img')
         using_backgrounds = False
-        if len(headshots) < 5:
+        using_headshots = True
+        if len(tags) < 5:
             headshots_background = self.select_headshots_background_image(soup)
             if len(headshots_background) > 5:
-                headshots = headshots_background
+                tags = headshots_background
                 using_backgrounds = True
             else:
-                raise Exception('not enough img')
-        if len(headshots) < 10:
-            items = [headshots[len(headshots) // 3], headshots[len(headshots) // 3 * 2], headshots[len(headshots) - 2]]
-        elif len(headshots) > 50:
-            items = [headshots[len(headshots) // 10 * i] for i in range(1, 10)]
+                # raise Exception('not enough img')
+                tags = self.find_name_tags(soups)
+                using_headshots = False
+                if len(tags) < 3:
+                    raise Exception("failed to find tags")
+
+        if len(tags) < 10:
+            items = [tags[len(tags) // 3], tags[len(tags) // 3 * 2], tags[len(tags) - 2]]
+        elif len(tags) > 50:
+            items = [tags[len(tags) // 10 * i] for i in range(1, 10)]
         else:
-            items = [headshots[len(headshots) // 7 * i] for i in range(1, 7)]
-        return items, using_backgrounds
+            items = [tags[len(tags) // 7 * i] for i in range(1, 7)]
+        return items, using_backgrounds, using_headshots
 
 
     def select_headshots_background_image(self, soup):
@@ -95,9 +114,7 @@ class ScrapingHelpers:
         while True:
             try:
                 s = next(strs)
-                if re.match(
-                        "^([A-Z][a-zA-Z.-]*[,]* [A-Z][a-zA-Z.-]* [A-Z][a-zA-Z.-]*|[A-Z][a-zA-Z.-]*[,]* [A-Z][a-zA-Z.-]*)(, Ph.D.)*$",
-                        unidecode.unidecode(" ".join(s.split()))):
+                if self.is_name(s, True):
                     if "University" not in s and "College" not in s and "Department" and "Professor" not in s \
                             and "Faculty" not in s and "Research" not in s and "Interest" not in s and "Staff" not in s \
                             and "Profile" not in s and "Student" not in s:
@@ -139,22 +156,34 @@ class ScrapingHelpers:
         title_pos = mode(title_positions)
         return name_pos, title_pos
 
-    def is_name(self, s):
+    def is_name(self, s, strict=False):
         if s is None:
-            return None
-        elif re.match("^([A-Z][a-zA-Z.-]*[,]* [A-Z][a-zA-Z.-]* [A-Z][a-zA-Z.-]*|[A-Z][a-zA-Z.-]*[,]* [A-Z][a-zA-Z.-]*)(, Ph.D.)*$",
-                      unidecode.unidecode(" ".join(s.split()))):
-            return s
+            return False
+        s = re.sub(', Ph.D.', '', s)
+        s = s.strip()
+        if strict:
+            if ',' in s:
+                tmp = s.split(', ', 2)
+                s = ' '.join([tmp[1], tmp[0]])
+            doc = self.nlp(unidecode.unidecode(" ".join(s.split())))
+            for ent in doc.ents:
+                if ent.label_ == "PERSON" and ent.end_char - ent.start_char + 7 > len(s):
+                    return True
+            return False
         else:
-            return None
+            if re.match("^([A-Z][a-zA-Z.-]*[,]* [A-Z][a-zA-Z.-]* [A-Z][a-zA-Z.-]*|[A-Z][a-zA-Z.-]*[,]* [A-Z][a-zA-Z.-]*)(, Ph.D.)*$",
+                        unidecode.unidecode(" ".join(s.split()))):
+                return True
+            else:
+                return False
 
     def is_title(self, s):
         if s is None:
-            return None
+            return False
         elif re.match("(?i).*(Professor|Lecturer|Student|Director|Fellow|Adjunct|Assistant|Coordinator|Doctoral|Postgraduate|Postdoctoral|Scientist|Visiting|Associate|Staff|Dean|Senior|Preceptor).*",s):
-            return s
+            return True
         else:
-            return None
+            return False
 
     def find_by_pos(self, tag, pos):
         it = tag.stripped_strings
@@ -164,8 +193,8 @@ class ScrapingHelpers:
             item = None
         return item
 
-    def find_img(self, tag, using_headshots):
-        if using_headshots:
+    def find_img(self, tag, using_background):
+        if using_background:
             try:
                 return self.get_url_background_img(tag)
             except:
@@ -190,9 +219,11 @@ class ScrapingHelpers:
         no_fails = 0
         for p in profs:
             name = self.find_by_pos(p, name_pos)
-            name = self.is_name(name)
+            if not self.is_name(name):
+                name = None
             title = self.find_by_pos(p, title_pos)
-            title = self.is_title(title)
+            if not self.is_title(title):
+                title = None
             img = self.find_img(p, using_background)
             if name is not None and title is not None:
                 item = {'name': name, 'title': title, 'img': img}
@@ -211,7 +242,7 @@ if __name__ == "__main__":
     driver = h.get_driver()
     soups = h.get_soups(url, driver)
     print(len(soups))
-    headshots = h.select_headshots(soups)
-    for headshot in headshots[:3]:
+    tags, using_background, using_headshots = h.select_tmp_tags(soups)
+    for tag in tags[:3]:
         print("___________________________")
-        print(headshot)
+        print(tag)
