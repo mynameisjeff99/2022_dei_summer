@@ -5,12 +5,10 @@ class ScrapingTr:
         self.helper = ScrapingHelpers()
 
     def find_profs_tr(self, soups):
-        profs = []
-        for soup in soups:
-            profs.extend(soup.find_all('tr'))
+        profs = [soup.find_all('tr') for soup in soups]
 
-        if len(profs) == 0:
-            raise Exception("No tr")
+        if not profs:
+            raise EOFError("No tr in html")
         return profs
 
 
@@ -18,6 +16,7 @@ class ScrapingTr:
         profs = self.find_profs_tr(soups)
         _, using_background, _ = self.helper.select_tmp_tags(soups)
 
+        # COMMENT PLEASE
         tags = [profs[len(profs) // 5 * i] for i in range(1, 6)]
 
         name_pos, title_pos = self.helper.find_pos(tags)
