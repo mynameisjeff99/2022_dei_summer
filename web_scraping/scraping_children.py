@@ -1,10 +1,40 @@
+"""The module is for scraping profiles using children of the tag containing all the profiles.
+
+This module exploits the design of some pages (having a tag containing all the profiles as children).
+"""
+
 from scraping_helpers import ScrapingHelpers
 
+
 class ScrapingChildren:
+    """The class contains the method to scrape the profiles using children of the tag.
+
+    Attributes:
+        soups(a list of bs4.element.BeautifulSoup): the soups generated from a particular faculty page.
+    """
+
     def __init__(self):
+        """The constructor for the ScrapingChildren class.
+        """
+
         self.helper = ScrapingHelpers()
 
     def find_profile_children(self, tags):
+        """The helper method is for finding tags (as the children of the target tag) containing
+        profiles in the soups.
+
+        A list of tags containing images/names are passed in then the method recursively add
+        parents into a list until a parent is already in the list. That tag would be designated as
+        the target_tag. Then the method returns all the direct children of the target_tag as the
+        profiles.
+
+        Parameters:
+            tags(a list of bs4.element.Tag): the tags containing images/names
+
+        Returns:
+            items(a list of bs4.element.Tag): the profile tags.
+        """
+
         parents = []
         parent = None
         target_tag = None
@@ -17,9 +47,8 @@ class ScrapingChildren:
                     target_tag = tag
                     parent = tmp_parent
                     break
-                else:
-                    parents.append(tmp_parent)
-                    new_tags.append(tmp_parent)
+                parents.append(tmp_parent)
+                new_tags.append(tmp_parent)
             tags = new_tags
 
         tag_name = target_tag.name
@@ -30,8 +59,20 @@ class ScrapingChildren:
                 items.append(c)
         return items
 
-
     def get_department_info_children(self, soups):
+        """The method is for finding profiles in the soups using children of the target_tag.
+
+        The soups are passed in then it samples tags containing image/name. Then it uses
+        find_profile_children to find all the tags containing profiles. Then it extracts
+        information from all the profile tags.
+
+        Parameters:
+            soups(a list of bs4.element.BeautifulSoup): the soups extracted from the webpages.
+
+        Returns:
+            items(a list of dict): all the profiles found in the soups.
+        """
+
         profs = []
         all_tmp_tags = []
         using_background = False
@@ -57,6 +98,7 @@ class ScrapingChildren:
 
         items = self.helper.get_info(profs, name_pos, title_pos, using_background)
         return items
+
 
 if __name__ == "__main__":
     s = ScrapingChildren()
