@@ -10,9 +10,9 @@ import requests
 import spacy
 from bs4 import BeautifulSoup
 import unidecode
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
@@ -43,26 +43,28 @@ class ScrapingHelpers:
             driver: Chrome driver for Selenium.
         """
 
-        #https://stackoverflow.com/questions/47508518/google-chrome-closes-immediately-after-being-launched-with-selenium
+        #https://stackoverflow.com/questions/47508518/
+        # google-chrome-closes-immediately-after-being-launched-with-selenium
         opts = Options()
         opts.add_argument(self.user_agent)
         opts.add_argument("start-maximized")
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=opts)
         return driver
 
-    def get_soups(self, url, driver=None, page_limit=5):
+    @staticmethod
+    def get_soups(url, driver=None, page_limit=5):
         """The methods extract soups from the faculty page(s).
 
         if driver is not passed in, the method directly extract a soup from the page using BS4,
-        if a driver is specified, the method uses Selenium to generate the page source then generates
-        the soup from the source code. If a next button is found on the page, then the driver get
-        the next page and then generate another soup until no next button is found or reaches the
-        page limit.
+        if a driver is specified, the method uses Selenium to generate the page source then
+        generates the soup from the source code. If a next button is found on the page, then
+        the driver get the next page and then generate another soup until no next button is
+        found or reaches the page limit.
 
         Parameters:
             url(str): the link for a particular faculty page.
             driver: Chrome driver for Selenium.
-            page_limit(int): Max # of pages
+            page_limit(int): Max # of pages.
 
         Returns:
             soups(a list of bs4.element.BeautifulSoup): Soups extracted from the faculty page(s).
@@ -82,9 +84,10 @@ class ScrapingHelpers:
             time.sleep(5)
             html = driver.page_source
             soups.append(BeautifulSoup(html, 'html5lib').body)
-            to_click = driver.find_elements(By.XPATH, "".join(["//a[contains(translate",
-                                                               "(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', ",
-                                                               "'abcdefghijklmnopqrstuvwxyz'), 'next')]"]))
+            to_click = driver.find_elements(
+                By.XPATH, "".join(["//a[contains(translate",
+                                   "(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', ",
+                                   "'abcdefghijklmnopqrstuvwxyz'), 'next')]"]))
 
             for item in to_click:
                 if len(item.get_attribute("innerText")) > 10:
@@ -100,9 +103,11 @@ class ScrapingHelpers:
                     if soup == soups[-1]:
                         break
                     soups.append(soup)
-                    to_click = driver.find_elements(By.XPATH, "".join(["//a[contains(translate",
-                                                                       "(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', ",
-                                                                       "'abcdefghijklmnopqrstuvwxyz'), 'next')]"]))
+                    to_click = driver.find_elements(
+                        By.XPATH,"".join(["//a[contains(translate",
+                                          "(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', ",
+                                          "'abcdefghijklmnopqrstuvwxyz'), 'next')]"]))
+
                     for item in to_click:
                         if len(item.get_attribute("innerText")) > 10:
                             to_click.remove(item)
@@ -110,7 +115,8 @@ class ScrapingHelpers:
                     break
         return soups
 
-    def select_headshots_background_image(self, soup):
+    @staticmethod
+    def get_headshots_background_image(soup):
         """The method find the tags that embed the headshots as background-image.
 
         It finds all 'div' tags that have 'background-image' in style
@@ -125,7 +131,8 @@ class ScrapingHelpers:
         img_tags = soup.find_all('div', style=lambda value: value and 'background-image' in value)
         return img_tags
 
-    def get_url_background_img(self, tag):
+    @staticmethod
+    def get_url_background_img(tag):
         """The method find url for if headshots are embedded as background-images.
 
         It uses Regex to find the url of headshots from the tag's style.
@@ -155,11 +162,11 @@ class ScrapingHelpers:
 
         elements = soups[0].find_all('a')
         items = []
-        for e in elements:
-            strings = list(e.stripped_strings)
-            for s in strings:
-                if self.is_name(s, True):
-                    items.append(e)
+        for element in elements:
+            strings = list(element.stripped_strings)
+            for string in strings:
+                if self.is_name(string, True):
+                    items.append(element)
         return items
 
     def select_tmp_tags(self, soups):
@@ -174,7 +181,7 @@ class ScrapingHelpers:
             soups(a list of bs4.element.BeautifulSoup): Soups extracted from the faculty page(s).
 
         Returns:
-            items(a list of bs4.element.Tag): temporary tags.
+            tmp_tags(a list of bs4.element.Tag): temporary tags.
             using_background(bool): whether the headshots are embedded as background-images
             using_headshots(bool): whether the headshots are found (as 'img' or 'background-image')
         """
@@ -183,7 +190,7 @@ class ScrapingHelpers:
         using_background = False
         using_headshots = True
         if len(tags) < 5:
-            headshots_background = self.select_headshots_background_image(soup)
+            headshots_background = self.get_headshots_background_image(soup)
             if len(headshots_background) > 5:
                 tags = headshots_background
                 using_background = True
@@ -195,53 +202,54 @@ class ScrapingHelpers:
                     raise Exception("failed to enough tags")
 
         if len(tags) < 10:
-            items = [tags[len(tags) // 3], tags[len(tags) // 3 * 2], tags[len(tags) - 2]]
+            tmp_tags = [tags[len(tags) // 3], tags[len(tags) // 3 * 2], tags[len(tags) - 2]]
         elif len(tags) > 50:
-            items = [tags[len(tags) // 10 * i] for i in range(1, 10)]
+            tmp_tags = [tags[len(tags) // 10 * i] for i in range(1, 10)]
         else:
-            items = [tags[len(tags) // 7 * i] for i in range(1, 7)]
-        return items, using_background, using_headshots
+            tmp_tags = [tags[len(tags) // 7 * i] for i in range(1, 7)]
+        return tmp_tags, using_background, using_headshots
 
-    def is_name(self, s, strict=False):
+    def is_name(self, string, strict=False):
         """The method determines whether a string is a person's name.
 
         The method first process the name (i.e. get rid of and title and convert the text
         into standard [first name] [last name] format (in case if there is a ',') and translate
-        it into unicode. Then if the strict param is True, it uses the nlp model, otherwise it uses Regex,
-        to determine whether the line is a person's name.
+        it into unicode. Then if the strict param is True, it uses the nlp model, otherwise
+        it uses Regex, to determine whether the line is a person's name.
 
         Parameters:
-            s(str): a line of text.
+            string(str): a line of text.
             strict(bool): whether the result will be determined strictly.
 
         Returns:
             bool: whether the line of text is a person's name.
         """
 
-        if s is None:
+        if string is None:
             return False
-        s = re.sub(r', Ph.D.', '', s)
-        s = re.sub(r', MD', '', s)
-        s = s.strip()
-        s = unidecode.unidecode(" ".join(s.split()))
-        if ',' in s:
-            tmp = s.split(', ', 2)
-            s = ' '.join([tmp[1], tmp[0]])
-        s = unidecode.unidecode(" ".join(s.split()))
+        string = re.sub(r', Ph.D.', '', string)
+        string = re.sub(r', MD', '', string)
+        string = string.strip()
+        string = unidecode.unidecode(" ".join(string.split()))
+        if ',' in string:
+            tmp = string.split(', ', 2)
+            string = ' '.join([tmp[1], tmp[0]])
+        string = unidecode.unidecode(" ".join(string.split()))
 
         if strict:
-            doc = self.nlp(s)
+            doc = self.nlp(string)
             for ent in doc.ents:
-                if ent.label_ == "PERSON" and ent.end_char - ent.start_char + 7 > len(s):
+                if ent.label_ == "PERSON" and ent.end_char - ent.start_char + 7 > len(string):
                     return True
 
-        elif re.match(fr"^({self.name_pattern} {self.name_pattern} {self.name_pattern}|{self.name_pattern} {self.name_pattern})$", s) \
-                and not re.search(fr"{('|'.join(self.not_name_keywords))}", s):
+        elif re.match(fr"^({self.name_pattern} {self.name_pattern} {self.name_pattern}|"
+                      fr"{self.name_pattern} {self.name_pattern})$", string) \
+                and not re.search(fr"{('|'.join(self.not_name_keywords))}", string):
             return True
 
         return False
 
-    def is_title(self, s):
+    def is_title(self, string):
         """The method determines whether a string is a title
 
         The method uses Regex to match the string with a list of keywords associated
@@ -254,13 +262,10 @@ class ScrapingHelpers:
             bool: whether the string is a title.
         """
 
-        if s is None:
+        if string is None:
             return False
-        s = unidecode.unidecode(" ".join(s.split()))
-        if re.match(fr"(?i).*({'|'.join(self.titles)}).*", s):
-            return True
-        else:
-            return False
+        string = unidecode.unidecode(" ".join(string.split()))
+        return bool(re.match(fr"(?i).*({'|'.join(self.titles)}).*", string))
 
     def find_name_pos(self, tag):
         """The method find the position of the name in a profile.
@@ -307,8 +312,7 @@ class ScrapingHelpers:
                 string = next(strs)
                 if self.is_title(string):
                     return pos
-                else:
-                    pos += 1
+                pos += 1
             except:
                 raise Exception("title position not found")
 
@@ -344,7 +348,8 @@ class ScrapingHelpers:
         title_pos = mode(title_positions)
         return name_pos, title_pos
 
-    def find_by_pos(self, tag, pos):
+    @staticmethod
+    def find_by_pos(tag, pos):
         """The method finds a string by position.
 
         The method go through the stripped strings in a tag to find string in the specified pos.
@@ -357,9 +362,9 @@ class ScrapingHelpers:
             item(str): the string found.
         """
 
-        it = tag.stripped_strings
+        strings = tag.stripped_strings
         try:
-            item = next(x for i, x in enumerate(it) if i == pos)
+            item = next(x for i, x in enumerate(strings) if i == pos)
         except:
             item = None
         return item
@@ -367,7 +372,8 @@ class ScrapingHelpers:
     def find_img(self, tag, using_background):
         """The method finds the image in a tag.
 
-        The method finds the image (headshots) based on whether they are embedded as 'background-image'.
+        The method finds the image (headshots) based on whether they are embedded
+        as 'background-image'.
 
         Parameters:
             tag(bs4.element.Tag): a profile tag.
@@ -417,14 +423,14 @@ class ScrapingHelpers:
         items = []
         total = 0
         no_fails = 0
-        for p in profs:
-            name = self.find_by_pos(p, name_pos)
+        for prof in profs:
+            name = self.find_by_pos(prof, name_pos)
             if not self.is_name(name):
                 name = None
-            title = self.find_by_pos(p, title_pos)
+            title = self.find_by_pos(prof, title_pos)
             if not self.is_title(title):
                 title = None
-            img = self.find_img(p, using_background)
+            img = self.find_img(prof, using_background)
             if name is not None and title is not None:
                 item = {'name': name, 'title': title, 'img': img}
                 items.append(item)
@@ -443,6 +449,6 @@ if __name__ == "__main__":
     the_soups = h.get_soups(the_url, the_driver)
     print(len(the_soups))
     the_tags, _, _ = h.select_tmp_tags(the_soups)
-    for t in the_tags[:3]:
+    for the_tag in the_tags[:3]:
         print("___________________________")
-        print(t)
+        print(the_tag)

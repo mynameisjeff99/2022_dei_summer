@@ -34,7 +34,7 @@ class Scraping:
         The method creates soups from the url. It uses 3 methods(tr, children, class name), then
         compares the result to select the one with the best performance. If all 3 methods fail,
         the method proceeds to use bruteforce method.
-        
+
         Parameters:
             url(str): the link for a particular faculty page.
 
@@ -71,6 +71,7 @@ class Scraping:
                 if curr is None or len(res) > len(curr):
                     curr = res
             return curr
+
 
 if __name__ == "__main__":
     s = Scraping()
