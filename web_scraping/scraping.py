@@ -39,7 +39,7 @@ class Scraping:
             url(str): the link for a particular faculty page.
 
         Returns:
-            profiles(a list of dictionaries): if all 4 methods failed, it returns None.
+            profiles(a list of dict): if all 4 methods failed, it returns None.
         """
 
         soups = self.helpers.get_soups(url, self.driver)
