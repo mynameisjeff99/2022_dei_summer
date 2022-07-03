@@ -26,9 +26,9 @@ class ScrapingHelpers:
         """
 
         self.nlp = spacy.load("en_core_web_sm")
-        self.user_agent = ("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) ",
+        self.user_agent = ''.join(["user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) ",
                           "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/",
-                           "83.0.4103.97 Safari/537.36")
+                           "83.0.4103.97 Safari/537.36"])
         self.titles = ["Professor", "Lecturer", "Student", "Director", "Fellow", "Adjunct",
                        "Assistant", "Coordinator", "Postgraduate", "Postdoctoral", "Scientist",
                        "Visiting", "Associate", "Staff", "PhD", "Dean", "Preceptor", "Senior"]
@@ -82,9 +82,9 @@ class ScrapingHelpers:
             time.sleep(5)
             html = driver.page_source
             soups.append(BeautifulSoup(html, 'html5lib').body)
-            to_click = driver.find_elements(By.XPATH, "//a[contains(translate",
-                                            "(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', ",
-                                            "'abcdefghijklmnopqrstuvwxyz'), 'next')]")
+            to_click = driver.find_elements(By.XPATH, "".join(["//a[contains(translate",
+                                                               "(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', ",
+                                                               "'abcdefghijklmnopqrstuvwxyz'), 'next')]"]))
 
             for item in to_click:
                 if len(item.get_attribute("innerText")) > 10:
@@ -100,9 +100,9 @@ class ScrapingHelpers:
                     if soup == soups[-1]:
                         break
                     soups.append(soup)
-                    to_click = driver.find_elements(By.XPATH, "//a[contains(translate",
-                                                    "(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', ",
-                                                    "'abcdefghijklmnopqrstuvwxyz'), 'next')]")
+                    to_click = driver.find_elements(By.XPATH, "".join(["//a[contains(translate",
+                                                                       "(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', ",
+                                                                       "'abcdefghijklmnopqrstuvwxyz'), 'next')]"]))
                     for item in to_click:
                         if len(item.get_attribute("innerText")) > 10:
                             to_click.remove(item)
@@ -235,7 +235,7 @@ class ScrapingHelpers:
                 if ent.label_ == "PERSON" and ent.end_char - ent.start_char + 7 > len(s):
                     return True
 
-        elif re.match(fr"^({self.name_pattern, self.name_pattern, self.name_pattern}|{self.name_pattern, self.name_pattern})$",s) \
+        elif re.match(fr"^({self.name_pattern} {self.name_pattern} {self.name_pattern}|{self.name_pattern} {self.name_pattern})$", s) \
                 and not re.search(fr"{('|'.join(self.not_name_keywords))}", s):
             return True
 
