@@ -173,7 +173,7 @@ class ScrapingHelpers:
         """The method find temporary tags used for determine the positions of name/title in a tag.
 
         The method first find tags that contain images. If the # tags is less than 5, then it
-        find tags that contain names. If none of the methods find more than 5 tags, it raises an
+        finds tags that contain names. If none of the methods find more than 5 tags, it raises an
         exception. Then according to the number of tags found, it returns a portion of tags as
         temporary tags.
 
@@ -401,7 +401,6 @@ class ScrapingHelpers:
                 except:
                     pass
         return None
-
 
     def get_info(self, profs, name_pos, title_pos, using_background):
         """The method finds information about profiles.
