@@ -3,6 +3,8 @@
 This module combines 4 scraping methods to scrape profiles from faculty pages.
 """
 
+import logging
+import json
 from scraping_helpers import ScrapingHelpers
 from scraping_tr import ScrapingTr
 from scraping_class_name import ScrapingClass
@@ -27,6 +29,50 @@ class Scraping:
         self.scraping_class_name = ScrapingClass()
         self.scraping_children = ScrapingChildren()
         self.scraping_bf = ScrapingBf()
+        self.logger = logging.getLogger()
+        self.logger.setLevel(logging.DEBUG)
+
+    def scrape_faculty(self, in_path, out_path):
+        """The driver method for scraping profiles.
+
+        The method reads a json file and then process it to add faculty information to
+        each department.
+
+        Parameters:
+            in_path(str): the path to json file containing school information.
+            out_path(str): the path to output the updated json file.
+
+        Returns:
+            school(a list of dict): updated school information.
+        """
+
+        no_success = 0
+        self.logger.addHandler(logging.FileHandler(in_path + '/../scraping_log.log', mode='w'))
+
+        with open(in_path, 'r') as file:
+            school = json.load(file)
+            self.logger.info('____ Loaded the school with %s departments ____', len(school))
+
+        for department in school:
+            department_name = department.get("department")
+            url = department.get('faculty_page')
+            no_success += 1
+            self.logger.info('Scraping faculty page for %s (%s)',
+                             department_name, url)
+            try:
+                res = self.get_department_info(url)
+                department.update({'success': True, 'profiles': res})
+                self.logger.info('Scraping for %s department successes (%s profiles found)',
+                                 department_name, len(res))
+            except:
+                department.update({'success': False})
+                self.logger.debug('Scraping for %s department fails', department_name)
+
+        with open(out_path, 'w') as file:
+            json.dump(school, file)
+
+        self.logger.info('Scraped successfully for %s out of %s departments', no_success, len(school))
+        return school
 
     def get_department_info(self, url):
         """The method for scraping profiles using 4 method.
@@ -43,28 +89,40 @@ class Scraping:
         """
 
         soups = self.helpers.get_soups(url, self.driver)
+        self.logger.info('Got soups (number of soups = %s)', len(soups))
+
         res_lst = []
         try:
-            res_lst.append(self.scraping_tr.get_department_info_tr(soups))
-            res_lst.append(self.scraping_tr.get_department_info_tr(soups))
+            res = self.scraping_tr.get_department_info_tr(soups)
+            res_lst.append(res)
+            self.logger.info('TR successes (length = %s)', len(res))
         except:
-            pass
+            self.logger.debug('TR fails')
 
         try:
-            res_lst.append(self.scraping_children.get_department_info_children(soups))
+            res = self.scraping_children.get_department_info_children(soups)
+            res_lst.append(res)
+            self.logger.info('CHILDREN successes (length = %s)', len(res))
         except:
-            pass
+            self.logger.debug('CHILDREN fails')
 
         try:
-            res_lst.append(self.scraping_class_name.get_department_info_class(soups))
+            res = self.scraping_class_name.get_department_info_class(soups)
+            res_lst.append(res)
+            self.logger.info('CLASS NAME successes (length = %s)', len(res))
         except:
-            pass
+            self.logger.debug('CLASS NAME fails')
 
         if len(res_lst) == 0:
+            self.logger.info('All 3 methods failed, now using BF')
             try:
-                return self.scraping_bf.get_department_info_bf(soups)
+                res = self.scraping_bf.get_department_info_bf(soups)
+                self.logger.info('BF successes (length = %s)', len(res))
+                return res
             except:
-                raise Exception("FAILED")
+                self.logger.debug('BF fails')
+                raise Exception("EVERYTHING FAILED")
+
         else:
             curr = None
             for res in res_lst:
