@@ -87,7 +87,6 @@ class ScrapingClass:
         tmp_profile_tags = [t for (t, c) in zip(tmp_profile_tags, class_names) if c == class_name]
 
         name_pos, title_pos = self.helper.find_pos(tmp_profile_tags)
-
         profile_tags = []
         for soup in soups:
             profile_tags.extend(soup.find_all(attrs={'class': class_name}))
@@ -100,6 +99,7 @@ if __name__ == "__main__":
     s = ScrapingClass()
     the_url = input("Website page: ")
     the_soups = s.helper.get_soups(the_url, s.helper.get_driver())
+    print(len(the_soups))
     res = s.get_department_info_class(the_soups)
     print(f"length = {len(res)}")
     print(res[0])
