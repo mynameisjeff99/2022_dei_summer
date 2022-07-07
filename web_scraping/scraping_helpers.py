@@ -52,7 +52,7 @@ class ScrapingHelpers:
         return driver
 
     @staticmethod
-    def get_soups(url, driver=None, page_limit=5):
+    def get_soups(url, driver=None, page_limit=20):
         """The methods extract soups from the faculty page(s).
 
         if driver is not passed in, the method directly extract a soup from the page using BS4,
@@ -83,6 +83,7 @@ class ScrapingHelpers:
             driver.get(url)
             time.sleep(5)
             html = driver.page_source
+            next_page_no = 2
             soups.append(BeautifulSoup(html, 'html5lib').body)
             to_click = driver.find_elements(
                 By.XPATH, "".join(["//a[contains(translate",
@@ -92,7 +93,13 @@ class ScrapingHelpers:
             for item in to_click:
                 if len(item.get_attribute("innerText")) > 10:
                     to_click.remove(item)
+            if len(to_click) == 0:
+                to_click = driver.find_elements(By.LINK_TEXT, f"{next_page_no}")
+            if len(to_click) == 0:
+                to_click = driver.find_elements(By.XPATH, "//a[@rel='next']")
+
             while len(to_click) != 0 and page_limit != 0:
+                next_page_no += 1
                 page_limit -= 1
                 try:
                     webdriver.ActionChains(driver).move_to_element(to_click[0]).\
@@ -104,13 +111,18 @@ class ScrapingHelpers:
                         break
                     soups.append(soup)
                     to_click = driver.find_elements(
-                        By.XPATH,"".join(["//a[contains(translate",
+                        By.XPATH, "".join(["//a[contains(translate",
                                           "(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', ",
                                           "'abcdefghijklmnopqrstuvwxyz'), 'next')]"]))
 
                     for item in to_click:
                         if len(item.get_attribute("innerText")) > 10:
                             to_click.remove(item)
+                    if len(to_click) == 0:
+                        to_click = driver.find_elements(By.LINK_TEXT, str(next_page_no))
+                    if len(to_click) == 0:
+                        to_click = driver.find_elements(By.XPATH, "//a[@rel='next']")
+
                 except:
                     break
         return soups
