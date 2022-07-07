@@ -66,7 +66,8 @@ class ProfileCleaning:
         last_name = None
         if name is not None:
             name = re.sub(', Ph.D.', '', name)
-            name = name.strip()
+            name = re.sub('\n', '', name)
+            name = ' '.join(name.split())
             if ',' in name:
                 tmp = name.split(', ', 2)
                 name = ' '.join([tmp[1], tmp[0]])
