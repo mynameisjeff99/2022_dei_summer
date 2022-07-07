@@ -1,0 +1,925 @@
+____ Loaded the school with 61 departments ____
+Scraping faculty page for Animal Science (https://cals.cornell.edu/animal-science/about/people)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://cals.cornell.edu/animal-science/about/people"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 192447
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME successes (length = 45)
+Scraping for Animal Science department successes (45 profiles found)
+Scraping faculty page for Charles H. Dyson School of Applied Economics and Management (https://dyson.cornell.edu/faculty-research/search/)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://dyson.cornell.edu/faculty-research/search/"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 185059
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME fails
+All 3 methods failed, now using BF
+BF fails
+Scraping for Charles H. Dyson School of Applied Economics and Management department fails
+Scraping faculty page for Biological and Environmental Engineering (https://cals.cornell.edu/biological-environmental-engineering/about/people/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://cals.cornell.edu/biological-environmental-engineering/about/people/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 131483
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME successes (length = 19)
+Scraping for Biological and Environmental Engineering department successes (19 profiles found)
+Scraping faculty page for Computational Biology (https://compbio.cornell.edu/people/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://compbio.cornell.edu/people/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 47291
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 13)
+CLASS NAME successes (length = 13)
+Scraping for Computational Biology department successes (13 profiles found)
+Scraping faculty page for Communication (https://cals.cornell.edu/communication/about-us/people)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://cals.cornell.edu/communication/about-us/people"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 154326
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME successes (length = 36)
+Scraping for Communication department successes (36 profiles found)
+Scraping faculty page for Earth and Atmospheric Sciences (https://www.eas.cornell.edu/eas/faculty-directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.eas.cornell.edu/eas/faculty-directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 99809
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 25)
+CLASS NAME successes (length = 25)
+Scraping for Earth and Atmospheric Sciences department successes (25 profiles found)
+Scraping faculty page for Ecology and Evolutionary Biology (https://ecologyandevolution.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://ecologyandevolution.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 128805
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 31)
+CLASS NAME successes (length = 29)
+Scraping for Ecology and Evolutionary Biology department successes (31 profiles found)
+Scraping faculty page for Entomology (https://entomology.cals.cornell.edu/people/faculty-and-senior-academic-staff)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://entomology.cals.cornell.edu/people/faculty-and-senior-academic-staff"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 85083
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 27)
+CLASS NAME successes (length = 27)
+Scraping for Entomology department successes (27 profiles found)
+Scraping faculty page for Food Science (https://cals.cornell.edu/food-science/about/people)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://cals.cornell.edu/food-science/about/people"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 191132
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME successes (length = 58)
+Scraping for Food Science department successes (58 profiles found)
+Scraping faculty page for Global Development (https://cals.cornell.edu/global-development/about/people/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://cals.cornell.edu/global-development/about/people/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 285323
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 11)
+CLASS NAME successes (length = 83)
+Scraping for Global Development department successes (83 profiles found)
+Scraping faculty page for School of Integrative Plant Science (https://cals.cornell.edu/school-integrative-plant-science/about/people/faculty-senior-academics)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://cals.cornell.edu/school-integrative-plant-science/about/people/faculty-senior-academics"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 427754
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 23)
+CLASS NAME successes (length = 139)
+Scraping for School of Integrative Plant Science department successes (139 profiles found)
+Scraping faculty page for Landscape Architecture (https://cals.cornell.edu/landscape-architecture/people)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://cals.cornell.edu/landscape-architecture/people"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 112374
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 5)
+CLASS NAME successes (length = 19)
+Scraping for Landscape Architecture department successes (19 profiles found)
+Scraping faculty page for Microbiology (https://cals.cornell.edu/microbiology/about-us/directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://cals.cornell.edu/microbiology/about-us/directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 108594
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME successes (length = 19)
+Scraping for Microbiology department successes (19 profiles found)
+Scraping faculty page for Molecular Biology and Genetics (https://mbg.cornell.edu/people/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://mbg.cornell.edu/people/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 105434
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 40)
+CLASS NAME successes (length = 40)
+Scraping for Molecular Biology and Genetics department successes (40 profiles found)
+Scraping faculty page for Natural Resources (https://cals.cornell.edu/natural-resources-environment/about-us/people/faculty-academic-staff)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://cals.cornell.edu/natural-resources-environment/about-us/people/faculty-academic-staff"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 169811
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 8)
+CLASS NAME successes (length = 49)
+Scraping for Natural Resources department successes (49 profiles found)
+Scraping faculty page for Neurobiology and Behavior (https://nbb.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://nbb.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 98061
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME successes (length = 13)
+Scraping for Neurobiology and Behavior department successes (13 profiles found)
+Scraping faculty page for Nutritional Sciences (https://www.human.cornell.edu/dns/about/people)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.human.cornell.edu/dns/about/people"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 385929
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME fails
+All 3 methods failed, now using BF
+BF fails
+Scraping for Nutritional Sciences department fails
+Scraping faculty page for Statistics and Data Science (https://stat.cornell.edu/people/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://stat.cornell.edu/people/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 82157
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 29)
+CLASS NAME fails
+Scraping for Statistics and Data Science department successes (29 profiles found)
+Scraping faculty page for Architecture (https://aap.cornell.edu/academics/faculty?department=8&location=&faculty_status=13831&focus_areas=&keyword=)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://aap.cornell.edu/academics/faculty?department=8&location=&faculty_status=13831&focus_areas=&keyword="}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 160639
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 55)
+CLASS NAME successes (length = 55)
+Scraping for Architecture department successes (55 profiles found)
+Scraping faculty page for Art (https://aap.cornell.edu/academics/faculty?department=7&location=&faculty_status=13831&focus_areas=&keyword=)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://aap.cornell.edu/academics/faculty?department=7&location=&faculty_status=13831&focus_areas=&keyword="}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 125645
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 31)
+CLASS NAME successes (length = 31)
+Scraping for Art department successes (31 profiles found)
+Scraping faculty page for City and Regional Planning (https://aap.cornell.edu/academics/faculty?department=15&location=&faculty_status=13831&focus_areas=&keyword=)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://aap.cornell.edu/academics/faculty?department=15&location=&faculty_status=13831&focus_areas=&keyword="}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 131414
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 33)
+CLASS NAME successes (length = 33)
+Scraping for City and Regional Planning department successes (33 profiles found)
+Scraping faculty page for  Africana Studies (https://africana.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://africana.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 100580
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 8)
+CLASS NAME successes (length = 11)
+Scraping for  Africana Studies department successes (11 profiles found)
+Scraping faculty page for Anthropology (https://anthropology.cornell.edu/anthropology-faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://anthropology.cornell.edu/anthropology-faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 113165
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 21)
+CLASS NAME successes (length = 21)
+Scraping for Anthropology department successes (21 profiles found)
+Scraping faculty page for Asian Studies (https://asianstudies.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://asianstudies.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 118097
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 34)
+CLASS NAME successes (length = 34)
+Scraping for Asian Studies department successes (34 profiles found)
+Scraping faculty page for Astronomy (https://astro.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://astro.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 104457
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 20)
+CLASS NAME successes (length = 20)
+Scraping for Astronomy department successes (20 profiles found)
+Scraping faculty page for Chemistry and Chemical Biology (https://chemistry.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://chemistry.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 123523
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 27)
+CLASS NAME successes (length = 27)
+Scraping for Chemistry and Chemical Biology department successes (27 profiles found)
+Scraping faculty page for Classics (https://classics.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://classics.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 117395
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 28)
+CLASS NAME successes (length = 31)
+Scraping for Classics department successes (31 profiles found)
+Scraping faculty page for Comparative Literature (https://complit.cornell.edu/department-faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://complit.cornell.edu/department-faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 103649
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME successes (length = 14)
+Scraping for Comparative Literature department successes (14 profiles found)
+Scraping faculty page for Ecology & Evolutionary Biology (https://ecologyandevolution.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://ecologyandevolution.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 128783
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 31)
+CLASS NAME successes (length = 29)
+Scraping for Ecology & Evolutionary Biology department successes (31 profiles found)
+Scraping faculty page for Economics (https://economics.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://economics.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 153571
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 54)
+CLASS NAME successes (length = 47)
+Scraping for Economics department successes (54 profiles found)
+Scraping faculty page for English (https://english.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://english.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 140973
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 42)
+CLASS NAME successes (length = 44)
+Scraping for English department successes (44 profiles found)
+Scraping faculty page for German Studies (https://german.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://german.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 94234
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 10)
+CLASS NAME successes (length = 7)
+Scraping for German Studies department successes (10 profiles found)
+Scraping faculty page for  Government (https://government.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://government.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 141136
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 27)
+CLASS NAME successes (length = 41)
+Scraping for  Government department successes (41 profiles found)
+Scraping faculty page for History (https://history.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://history.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 141710
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 32)
+CLASS NAME successes (length = 50)
+Scraping for History department successes (50 profiles found)
+Scraping faculty page for History of Art and Visual Studies (https://arthistory.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://arthistory.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 97992
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 15)
+CLASS NAME successes (length = 17)
+Scraping for History of Art and Visual Studies department successes (17 profiles found)
+Scraping faculty page for Linguistics (https://linguistics.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://linguistics.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 98899
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 18)
+CLASS NAME successes (length = 15)
+Scraping for Linguistics department successes (18 profiles found)
+Scraping faculty page for Mathematics (https://math.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://math.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 140195
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 41)
+CLASS NAME successes (length = 41)
+Scraping for Mathematics department successes (41 profiles found)
+Scraping faculty page for Music (https://music.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://music.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 112768
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 26)
+CLASS NAME successes (length = 23)
+Scraping for Music department successes (26 profiles found)
+Scraping faculty page for Near Eastern Studies (https://neareasternstudies.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://neareasternstudies.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 124563
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 19)
+CLASS NAME successes (length = 34)
+Scraping for Near Eastern Studies department successes (34 profiles found)
+Scraping faculty page for Performing and Media Arts (https://pma.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://pma.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 111141
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 19)
+CLASS NAME successes (length = 23)
+Scraping for Performing and Media Arts department successes (23 profiles found)
+Scraping faculty page for Sage School of Philosophy (https://philosophy.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://philosophy.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 107287
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 27)
+CLASS NAME successes (length = 21)
+Scraping for Sage School of Philosophy department successes (27 profiles found)
+Scraping faculty page for Physics (https://physics.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://physics.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 143092
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 48)
+CLASS NAME successes (length = 49)
+Scraping for Physics department successes (49 profiles found)
+Scraping faculty page for Psychology (https://psychology.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://psychology.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 142412
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 38)
+CLASS NAME successes (length = 45)
+Scraping for Psychology department successes (45 profiles found)
+Scraping faculty page for Romance Studies (https://romancestudies.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://romancestudies.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 139101
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 39)
+CLASS NAME successes (length = 43)
+Scraping for Romance Studies department successes (43 profiles found)
+Scraping faculty page for Science and Technology Studies (https://sts.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://sts.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 125967
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME successes (length = 39)
+Scraping for Science and Technology Studies department successes (39 profiles found)
+Scraping faculty page for Sociology (https://sociology.cornell.edu/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://sociology.cornell.edu/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 116306
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 22)
+CLASS NAME successes (length = 29)
+Scraping for Sociology department successes (29 profiles found)
+Scraping faculty page for Peter and Stephanie Nolan School of Hotel Administration (https://sha.cornell.edu/faculty-research/search/)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://sha.cornell.edu/faculty-research/search/"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 261470
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME fails
+All 3 methods failed, now using BF
+BF fails
+Scraping for Peter and Stephanie Nolan School of Hotel Administration department fails
+Scraping faculty page for Samuel Curtis Johnson Graduate School of Management (https://www.johnson.cornell.edu/faculty-research/search/)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.johnson.cornell.edu/faculty-research/search/"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 202150
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME fails
+All 3 methods failed, now using BF
+BF successes (length = 20)
+Scraping for Samuel Curtis Johnson Graduate School of Management department successes (20 profiles found)
+Scraping faculty page for Computer Science (http://www.cs.cornell.edu/people/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "http://www.cs.cornell.edu/people/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 324954
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 109)
+CLASS NAME fails
+Scraping for Computer Science department successes (109 profiles found)
+Scraping faculty page for Information Science (https://infosci.cornell.edu/people/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://infosci.cornell.edu/people/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 185615
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 74)
+CLASS NAME successes (length = 74)
+Scraping for Information Science department successes (74 profiles found)
+Scraping faculty page for School of Applied and Engineering Physics (https://www.aep.cornell.edu/aep/faculty-directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.aep.cornell.edu/aep/faculty-directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 81625
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 17)
+CLASS NAME successes (length = 18)
+Scraping for School of Applied and Engineering Physics department successes (18 profiles found)
+Scraping faculty page for Meinig School of Biomedical Engineering (https://www.bme.cornell.edu/bme/faculty-directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.bme.cornell.edu/bme/faculty-directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 100572
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 24)
+CLASS NAME successes (length = 25)
+Scraping for Meinig School of Biomedical Engineering department successes (25 profiles found)
+Scraping faculty page for Smith School of Chemical and Biomolecular Engineering (https://www.cheme.cornell.edu/cbe/faculty-directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.cheme.cornell.edu/cbe/faculty-directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 93510
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 23)
+CLASS NAME successes (length = 24)
+Scraping for Smith School of Chemical and Biomolecular Engineering department successes (24 profiles found)
+Scraping faculty page for School of Civil and Environmental Engineering (https://www.cee.cornell.edu/cee/faculty-directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.cee.cornell.edu/cee/faculty-directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 98134
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 23)
+CLASS NAME successes (length = 24)
+Scraping for School of Civil and Environmental Engineering department successes (24 profiles found)
+Scraping faculty page for Computer Science (https://www.cs.cornell.edu/people/faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.cs.cornell.edu/people/faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 324954
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 109)
+CLASS NAME fails
+Scraping for Computer Science department successes (109 profiles found)
+Scraping faculty page for School of Electrical and Computer Engineering (https://www.ece.cornell.edu/ece/faculty-directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.ece.cornell.edu/ece/faculty-directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 127908
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 45)
+CLASS NAME successes (length = 46)
+Scraping for School of Electrical and Computer Engineering department successes (46 profiles found)
+Scraping faculty page for Materials Science and Engineering (https://www.mse.cornell.edu/mse/faculty-directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.mse.cornell.edu/mse/faculty-directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 92067
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 23)
+CLASS NAME successes (length = 24)
+Scraping for Materials Science and Engineering department successes (24 profiles found)
+Scraping faculty page for Sibley School of Mechanical and Aerospace Engineering  (https://www.mae.cornell.edu/mae/faculty-directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.mae.cornell.edu/mae/faculty-directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 164741
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 61)
+CLASS NAME successes (length = 62)
+Scraping for Sibley School of Mechanical and Aerospace Engineering  department successes (62 profiles found)
+Scraping faculty page for School of Operations Research and Information Engineering (https://www.orie.cornell.edu/orie/faculty-directory)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.orie.cornell.edu/orie/faculty-directory"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 133242
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 36)
+CLASS NAME successes (length = 37)
+Scraping for School of Operations Research and Information Engineering department successes (37 profiles found)
+Scraping faculty page for College of Human Ecology (https://www.human.cornell.edu/about/people?combine=&field_bio_department_2_target_id=All&field_bio_employee_type_value=Faculty)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.human.cornell.edu/about/people?combine=&field_bio_department_2_target_id=All&field_bio_employee_type_value=Faculty"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 567515
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN successes (length = 90)
+CLASS NAME successes (length = 90)
+Scraping for College of Human Ecology department successes (90 profiles found)
+Scraping faculty page for School of Industrial and Labor Relations (https://www.ilr.cornell.edu/people)
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/url {"url": "https://www.ilr.cornell.edu/people"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/url HTTP/1.1" 200 14
+Finished Request
+GET http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/source {}
+http://localhost:62381 "GET /session/ced2624dbddd6d845ac5746242150355/source HTTP/1.1" 200 715451
+Finished Request
+POST http://localhost:62381/session/ced2624dbddd6d845ac5746242150355/elements {"using": "xpath", "value": "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'next')]"}
+http://localhost:62381 "POST /session/ced2624dbddd6d845ac5746242150355/elements HTTP/1.1" 200 12
+Finished Request
+Got soups (number of soups = 1)
+TR fails
+CHILDREN fails
+CLASS NAME successes (length = 268)
+Scraping for School of Industrial and Labor Relations department successes (268 profiles found)
+Scraped successfully for 61 out of 61 departments
