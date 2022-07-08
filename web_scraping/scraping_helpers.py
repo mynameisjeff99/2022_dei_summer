@@ -402,16 +402,22 @@ class ScrapingHelpers:
                 pass
 
         else:
-            img_tag = tag.find('img')
-            if img_tag is not None:
+            img_tags = tag.find_all('img')
+            for img_tag in img_tags:
                 try:
-                    return img_tag['src']
+                    src = img_tag['src']
+                    if 'data:image/' not in src:
+                        return src
                 except:
                     pass
+
                 try:
-                    return img_tag['srcset'].split()[0]
+                    srcset = img_tag['srcset'].split()[0]
+                    if 'data:image/' not in srcset:
+                        return srcset
                 except:
                     pass
+
         return None
 
     def get_info(self, profs, name_pos, title_pos, using_background):
