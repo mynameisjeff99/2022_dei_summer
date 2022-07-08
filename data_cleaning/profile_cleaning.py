@@ -127,3 +127,5 @@ class ProfileCleaning:
             if img_url[0] == '/' and img_url[:2] != '//':
                 img_url = department_base_url + img_url
                 profile.update({'img': img_url})
+            elif img_url[:2] == '//':
+                profile.update({'img': 'http:' + img_url})
