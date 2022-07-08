@@ -41,7 +41,7 @@ class ProfileCleaning:
             school = json.load(file)
         for department in school:
             if department.get('profiles') is not None:
-                department_base_url = self.get_department_base_url(department.get('url'))
+                department_base_url = self.get_department_base_url(department.get('faculty_page'))
                 for profile in department.get('profiles'):
                     self.process_title(profile)
                     self.process_name(profile)
