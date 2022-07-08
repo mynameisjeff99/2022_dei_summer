@@ -402,12 +402,14 @@ class ScrapingHelpers:
                 pass
 
         else:
-            img_tags = tag.find_all('img')
-            for img_tag in img_tags:
+            img_tag = tag.find('img')
+            if img_tag is not None:
                 try:
                     src = img_tag['src']
                     if 'data:image/' not in src:
                         return src
+                    else:
+                        return img_tag['data-src']
                 except:
                     pass
 
@@ -415,6 +417,8 @@ class ScrapingHelpers:
                     srcset = img_tag['srcset'].split()[0]
                     if 'data:image/' not in srcset:
                         return srcset
+                    else:
+                        return img_tag['data-srcset']
                 except:
                     pass
 
