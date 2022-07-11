@@ -136,7 +136,7 @@ class GenderRaceRecognition:
         df = pd.DataFrame(profiles)
         odf = pred_census_ln(df, 'last_name')
         odf = odf[["name", "title", "img", "first_name",
-                   "middle_name", "last_name", "gender", "race"]]
+                   "middle_name", "last_name", "rank", "gender", "race"]]
         new_profiles = odf.to_dict(orient='records')
         return new_profiles
 
