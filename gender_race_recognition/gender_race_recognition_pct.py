@@ -6,6 +6,7 @@ This module uses pre-trained ML models to get gender and race information
 
 import sys
 import json
+from datetime import datetime
 from urllib.request import Request, urlopen
 import numpy as np
 import cv2
@@ -62,10 +63,14 @@ class GenderRaceRecognition:
                     pct_from_img = self.detect_using_img(profile)
                     pct_data.update(pct_from_img)
                     profile['pct_data'] = pct_data
-                print(f'{department.get("department")}: {len(profiles)} '
+                now = datetime.now()
+                dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+                print(dt_string, f'{department.get("department")}: {len(profiles)} '
                       f'profiles completed')
             else:
-                print(f'{department.get("department")}: 0 profiles completed')
+                now = datetime.now()
+                dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+                print(dt_string, f'{department.get("department")}: 0 profiles completed')
 
         if out_path is not None:
             with open(out_path, 'w') as file:
@@ -87,15 +92,22 @@ class GenderRaceRecognition:
         """
         last_name = profile.get('last_name')
         first_name = profile.get('first_name')
-        if '-' in last_name:
+        if last_name is not None and '-' in last_name:
             last_name = last_name.split('-')[0]
-        race_pct = self.census_guesser.\
-            race_guesser(last_name)
-        gender_pct = self.census_guesser.\
-            gender_guesser(first_name)
+
+        if last_name is not None:
+            race_pct = self.census_guesser.\
+                race_guesser(last_name)
+        else:
+            race_pct = None
+
+        if first_name is not None:
+            gender_pct = self.census_guesser.\
+                gender_guesser(first_name)
+        else:
+            gender_pct = None
         return {'race_pct_name': race_pct,
                 'gender_pct_name': gender_pct}
-
 
     def detect_using_img(self, profile):
         """The method for adding gender and race information using a person's headshot.
