@@ -69,6 +69,7 @@ class GenderRaceRecognition:
                       f'profiles completed')
             else:
                 now = datetime.now()
+
                 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
                 print(dt_string, f'{department.get("department")}: 0 profiles completed')
 
