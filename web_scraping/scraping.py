@@ -47,7 +47,7 @@ class Scraping:
         """
 
         no_success = 0
-        self.logger.addHandler(logging.FileHandler(in_path + '/../scraping_log.log', mode='w'))
+        self.logger.addHandler(logging.FileHandler(out_path + '/../scraping_log.log', mode='w'))
 
         with open(in_path, 'r') as file:
             school = json.load(file)
