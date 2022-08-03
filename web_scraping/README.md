@@ -10,7 +10,7 @@ This directory contains the modules and applications related to scraping data fr
 - <font color="orange">scrape_nces_data.ipynb</font>: the notebook used to scrape data from the NCES databse for comparison.
 
 ## <font color="IndianRed">How to use (<font color="orange">scraping.py</font>):</font> 
-### <font color="SteelBlue">Import and initialize the object</font>
+### <font color="SteelBlue">Import the module and initialize the object</font>
     from scraping import Scraping
     scraping = Scraping()
 ### <font color="SteelBlue">Scrape profiles for an individual directory</font>
@@ -35,6 +35,17 @@ This directory contains the modules and applications related to scraping data fr
     columbia = scraping.scrape_faculty(in_path, out_path)
 
 ## <font color="IndianRed">How to use (<font color="orange">scrape_nces_data.ipynb</font>):</font>
+### <font color="SteelBlue">Import relevant packages</font>
+    import sys
+    import re
+    import requests
+    import time
+    import json
+    from bs4 import BeautifulSoup
+    from webdriver_manager.chrome import ChromeDriverManager
+    from selenium import webdriver
+    from selenium.webdriver.chrome.service import Service
+    from selenium.webdriver.chrome.options import Options
 ### <font color="SteelBlue">Get Selenium driver</font>
     driver = get_driver()
 ### <font color="SteelBlue">Get the url containing the human resources data</font>
@@ -52,7 +63,7 @@ This directory contains the modules and applications related to scraping data fr
   - NCES demographic data (dict of dict): Dictionary containing a school's NCES demographic data, the first level is gender, the second level is academic ranks.
 - The data is also dumped as a json file in the data folder.
 - Currently, only data for Professors, Associate professors, and Assistant professors are collected.
-### <font color="SteelBlue">Example:</font>
+### <font color="SteelBlue">Example</font>
     driver = get_driver()
     columbia_unitid = 190150
     columbia_url = get_school_url(columbia_unitid)
