@@ -1,6 +1,6 @@
 # <font color="Salmon">get_faculty_pages</font>
 
-This directory contains a files that allow users to find faculty directories.
+This directory contains a file that allows users to find faculty directories.
 
 ## <font color="IndianRed">Item:</font>
 - <font color="orange">find_faculty_pages.ipynb</font>: both the methods for scraping directories (from a source containing links to all department pages of a university) and its application. 
