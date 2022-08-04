@@ -3,7 +3,7 @@
 This directory contains data collected throughout the process.
 
 ## <font color="IndianRed">Items:</font>
-- {school_name}: the folder containing all the data for the particular school.
+- <font color="orange">{school}</font>: the folder containing all the data for the particular school.
 
 ## <font color="IndianRed">Items within each folder:</font>
 - <font color="orange">data_during_process</font>: less important or outdated data collected during the process.
