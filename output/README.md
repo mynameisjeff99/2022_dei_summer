@@ -1,7 +1,8 @@
-# output
+# <font color="Salmon">output</font>
 
 This directory contains output of the pipeline.
 
-to-do: re-organize the files into folders
-
-- {school_name}: the folder containing all the data for the particular school.
+## <font color="IndianRed">Items:</font>
+- <font color="orange">data_during_process</font>: less outdated output collected during the process.
+- <font color="orange">{school}_department_pct_v2.json</font>: the summary of each department's gender and race data in the form of pct.
+- <font color="orange">{school}_whole_school_pct_v2.json</font>: the summary of the school's gender and race data in the form of pct.
