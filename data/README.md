@@ -14,6 +14,6 @@ This directory contains data collected throughout the process.
 - <font color="orange">{school}_v2_finalized.json</font>: on top of {school}_detected_pct, having metadata added for each department.
 - <font color="orange">{school}_NCES_pct.json</font>: contains the data scraped from NCES in the form of pct.
 
-## <font color="IndianRed">To do:</font>
+## <font color="IndianRed">To-do:</font>
 - Change the naming of the files for better clarity.
 - Change the input and output locations in the notebooks to reflect the new structure of the data folder.

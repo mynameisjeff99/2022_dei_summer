@@ -36,6 +36,6 @@ This directory contains a notebook used for exploratory data analysis.
 - See the notebook for details.
 - A comparison with the data from the NCES human resources data (the scraper is in the web_scraping folder) is also included. E.g. For columbia the data can be found in https://nces.ed.gov/ipeds/datacenter/FacsimileView.aspx?surveyNumber=9&unitId=166027&year=2020
 
-## <font color="IndianRed">To do:</font>
+## <font color="IndianRed">To-do:</font>
 - Further analyze the data.
 - Conduct analysis for departments across schools.
