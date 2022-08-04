@@ -10,7 +10,7 @@ This directory contains the files related to gender and race detection.
 - <font color="orange">get_census_name_csv.ipynb</font>: transform the census data to .csv files.
 - <font color="orange">gender_race_recognition_pct.py (gender_race_recognition_pct.ipynb for application)</font>: module for inferring gender and race percentages from the name and headshot of profiles.
 - <font color="orange">data_labeling.ipynb</font>: the notebook for manually labeling gender and race of profiles for the train/test set.
-- <font color="orange">ml_model_application.ipynb</font>: the notebook contains the training of classifiers to predict the gender and race of profiles from the percentage data.
+- <font color="orange">classify_from_pct_data.ipynb</font>: the notebook contains the training of classifiers to predict the gender and race of profiles from the percentage data.
 
 ## <font color="IndianRed">How to use (<font color="orange">data_labeling.ipynb</font>):</font>
 ### <font color="SteelBlue">Import relevant packages</font>
@@ -64,7 +64,7 @@ This directory contains the files related to gender and race detection.
     in_path, out_path = get_paths('columbia')
     columbia = recognition.detect_gender_race(in_path, out_path)
 
-## <font color="IndianRed">How to use (<font color="orange">ml_model_application.ipynb</font>):</font>
+## <font color="IndianRed">How to use (<font color="orange">classify_from_pct_data.ipynb</font>):</font>
 ### <font color="SteelBlue">Import relevant packages and changes the sns setting</font>
     import sys
     import json
@@ -108,6 +108,6 @@ This directory contains the files related to gender and race detection.
 - Reorganize the folder for clarity.
 - Separate get_census_names_csv into 2 files.
 - Separate data_labeling into 2 files.
-- Separate the ml_model_application into 2 files.
+- Separate classify_from_pct_data into 2 files.
 - Improve the gender guesser to place more weight for names used by people born in 1950-1990.
-- In ml_model_application, find a better way to classify partial-detected data (i.e. having pct data inferred from only name or only image)
+- In classify_from_pct_data, find a better way to classify partial-detected data (i.e. having pct data inferred from only name or only image)
