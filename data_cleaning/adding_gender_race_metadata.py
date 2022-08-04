@@ -4,7 +4,7 @@ This module counts the number of each category for each departments
 """
 
 
-class AddGenderRaceDataPct:
+class AddGenderRaceMetadata:
     """This is the class for summarizing the gender/race data.
 
     Attributes:
@@ -18,7 +18,7 @@ class AddGenderRaceDataPct:
         self.ranks = ['professor', 'associate professor', 'assistant professor',
                       'teaching staff', 'other']
 
-    def add_gender_race_data_pct(self, school):
+    def add_gender_race_metadata(self, school):
         """This is the method for summarizing the gender and race data.
 
         Parameters:
