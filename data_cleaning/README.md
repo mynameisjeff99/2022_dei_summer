@@ -8,6 +8,7 @@ This directory contains the modules for data cleaning.
 - <font color="orange">profile_cleaning.py (profile_cleaning.ipynb for its application)</font>: contains the methods for standardizing the formats of profiles (names, ranks, urls)
 - <font color="orange">dedupe_profiles_within_department.py</font>: dedupe the profiles.
 - <font color="orange">gender_race_cleaning.ipynb</font>: contains both the methods and application for standardizing the formats of gender and race data inferred.
+- <font color="orange">adding_gender_race_metadata.py (adding_gender_race_metadata.ipynb for its application)</font>: Add gender and race metadata to each department's info.
 
 ## <font color="IndianRed">How to use (<font color="orange">directory_cleaning.ipynb</font>):</font>
 ### <font color="SteelBlue">Import relevant packages</font>
@@ -80,4 +81,12 @@ This directory contains the modules for data cleaning.
     out_path = sys.path[0] + '/../data/columbia/columbia_test_processed.json'
     columbia_processed = p_cleaning.clean_profiles(in_path, out_path)
 
-
+## <font color="IndianRed">How to use (<font color="orange">adding_gender_race_metadata.py</font>):</font>
+### <font color="SteelBlue">Import the module and initialize the object</font>
+    from adding_gender_race_metadata import AddGenderRaceMetadata
+    a = AddGenderRaceMetadata()
+### <font color="SteelBlue">Add the metadata</font>
+    a.add_gender_race_metadata(the_school)
+- Parameters:
+  - the_school(the list of dictionary containing a school's department info)
+- The function adds the metadata summarizing each department's gender and race data as gender_race_data in the department's dict
